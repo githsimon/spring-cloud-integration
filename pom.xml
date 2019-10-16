@@ -9,7 +9,11 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring-cloud-zuul</module>
+        <module>spring-cloud-stream-kafka</module>
         <module>netty-demo</module>
+        <module>interview-elasticsearch</module>
+        <module>interview-demo</module>
+        <module>mysql-to-elasticsearch</module>
     </modules>
     <name>spring-cloud-integration</name>
     <description>整合spring-cloud-stream/sleuth/zuul/eureka/</description>
@@ -23,7 +27,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.SR1</spring-cloud.version>
+        <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
     </properties>
     <dependencies>
         <dependency>
@@ -43,13 +47,6 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
                 <version>5.0.0.Alpha2</version>
@@ -66,6 +63,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
             </plugin>
         </plugins>
     </build>
