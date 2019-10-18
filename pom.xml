@@ -14,6 +14,7 @@
         <module>interview-elasticsearch</module>
         <module>interview-demo</module>
         <module>mysql-to-elasticsearch</module>
+        <module>akka-demo</module>
     </modules>
     <name>spring-cloud-integration</name>
     <description>整合spring-cloud-stream/sleuth/zuul/eureka/</description>
